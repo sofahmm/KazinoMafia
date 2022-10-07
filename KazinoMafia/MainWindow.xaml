@@ -1,0 +1,63 @@
+﻿<Window x:Class="KazinoMafia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KazinoMafia"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Логин"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   FontSize="20"/>
+        <TextBox x:Name="tb_login"
+                 Grid.Column="2"
+                 Grid.Row="2"
+                 FontSize="20"
+                 VerticalAlignment="Top"/>
+
+        <TextBlock Text="Пароль"
+                   Grid.Column="1"
+                   Grid.Row="3"
+                   FontSize="20"/>
+        <PasswordBox x:Name="pb_pass"
+                     Grid.Column="2"
+                     Grid.Row="3"
+                     FontSize="20"
+                     Height="30"
+                     VerticalAlignment="Top"/>
+
+        <Button x:Name="loginBtn"
+                Content="Войти"
+                Grid.Column="2"
+                Grid.Row="4"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                FontSize="20"
+                Margin="30 0 0 0"
+                Click="loginBtn_Click"/>
+        <Button x:Name="regBtn"
+                Content="Регистрация"
+                Grid.Column="1"
+                Grid.Row="4"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                FontSize="20"
+                Click="regBtn_Click"/>
+    </Grid>
+</Window>
