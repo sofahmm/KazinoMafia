@@ -20,16 +20,18 @@ namespace KazinoMafia
     /// </summary>
     public partial class KazinoWindow : Window
     {
-        public static User user { get; set; }
+        public static User user1 { get; set; }
         public KazinoWindow()
         {
             InitializeComponent();
             string log = Properties.Settings.Default.Login;
             string pas = Properties.Settings.Default.Password;
             List<User> users = new List<User>(Connection.kazinoEntities.User.ToList());
-            user = users.Where(user => user.Login == log && user.Password == pas).FirstOrDefault();
-            tb_count.Text = user.Count.ToString();
-            tb_name.Text = user.Name;
+            user1 = users.Where(user => user.Login == log && user.Password == pas).FirstOrDefault();
+            tb_count.Text = user1.Count.ToString();
+            tb_name.Text = user1.Name;
+
+            this.DataContext = this;
         }
 
         private void krutBtn_Click(object sender, RoutedEventArgs e)
@@ -104,22 +106,22 @@ namespace KazinoMafia
             }
             if (r1 == r2 && r2 == r3)
             {
-                user.Count += 1000;
+                user1.Count += 1000;
             }
             else
             {
                 if (r1 == r2 || r2 == r3 || r1 == r3)
                 {
-                    user.Count += 100;
+                    user1.Count += 100;
                 }
                 else
                 {
-                    user.Count -= 10;
+                    user1.Count -= 10;
                 }
             }
 
             Connection.kazinoEntities.SaveChanges();
-            tb_count.Text = user.Count.ToString();
+            tb_count.Text = user1.Count.ToString();
         }
     }
 }
